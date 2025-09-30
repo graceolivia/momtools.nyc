@@ -1,0 +1,8 @@
+    <svg class="matisse-shape shape1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="500" height="500" role="img" aria-label="matisse-style star">
+      <path d="M100 14
+               L114 64  163 42  124 82  186 92
+               L124 102 163 142 114 126 100 188
+               L90 126  42 163  82 116  14 92
+               L82 82   42 42   90 64  Z"
+            fill="var(--red)" stroke="none"/>
+    </svg>

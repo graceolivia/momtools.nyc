@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="220" height="220" role="img" aria-label="matisse-style cute apple cutout">
+  <defs>
+    <!-- optional rough edge vibe; remove filter to keep clean -->
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="5"/>
+      <feDisplacementMap in="SourceGraphic" scale="2.6"/>
+    </filter>
+  </defs>
+
+  <!-- apple body (single wobbly cutout) -->
+  <path filter="url(#rough)" fill="currentColor" stroke="none"
+        d="M150 35
+           C160 28,173 28,182 35
+           C193 45,198 58,197 68
+           C210 60,220 64,222 75
+           C224 88,215 97,204 100
+           C216 100,224 110,221 122
+           C217 140,200 163,178 179
+           C153 196,120 206,94 203
+           C62 199,39 184,29 166
+           C17 145,16 120,25 98
+           C36 69,60 49,90 42
+           C109 38,127 39,150 35 Z"/>
+
+  <!-- optional cute face (remove this group for pure shape) -->
+  <g fill="#101010" opacity="0.9">
+    <circle cx="110" cy="125" r="5"/>
+    <circle cx="140" cy="125" r="5"/>
+    <path d="M118 140
+             C124 146,136 146,142 140"
+          fill="none" stroke="#101010" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

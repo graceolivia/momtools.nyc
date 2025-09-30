@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="300" height="300" role="img" aria-label="matisse-style rough spiral">
+  <defs>
+    <style>
+      /* optional gentle spin: add class="spin" on the <path> if you want it */
+      @keyframes slowspin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      .spin { transform-origin: 250px 250px; animation: slowspin 40s linear infinite; }
+    </style>
+  </defs>
+  <!-- hand-cut spiral path (deliberately uneven and choppy) -->
+  <path d="M280 250
+           L275 245
+           C265 238,252 237,242 242
+           L238 248
+           C235 255,237 263,243 268
+           L250 271
+           C258 273,267 272,274 267
+           L280 260
+           C285 252,284 242,277 234
+           L268 227
+           C257 222,244 223,234 230
+           L225 240
+           C218 252,220 266,230 276
+           L243 284
+           C258 290,275 288,287 277
+           L297 262
+           C305 245,302 225,287 210
+           L268 197
+           C245 185,218 188,198 208
+           L182 230
+           C170 255,175 285,198 307
+           L225 323
+           C255 337,290 332,315 307
+           L335 278
+           C350 243,343 203,313 173
+           L278 150
+           C237 130,190 138,158 173
+           L135 213
+           C115 258,125 310,163 347
+           L208 370
+           C258 392,315 382,352 342
+           L378 298"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="28"
+        stroke-linecap="square"
+        stroke-linejoin="miter"/>
+</svg>

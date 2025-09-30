@@ -1,0 +1,51 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Create perspective grid of black rectangles with random rotations and sizes -->
+  <g id="grid">
+    <!-- Row 1 (top, smallest) -->
+    <rect x="320" y="120" width="23" height="18" fill="black" transform="rotate(2 331.5 129)"/>
+    <rect x="350" y="125" width="19" height="24" fill="black" transform="rotate(-3 359.5 137)"/>
+    <rect x="382" y="130" width="26" height="19" fill="black" transform="rotate(4 395 139.5)"/>
+    <rect x="416" y="135" width="21" height="27" fill="black" transform="rotate(-1 426.5 148.5)"/>
+    <rect x="452" y="140" width="29" height="23" fill="black" transform="rotate(3 466.5 151.5)"/>
+    
+    <!-- Row 2 -->
+    <rect x="300" y="160" width="27" height="22" fill="black" transform="rotate(-4 313.5 171)"/>
+    <rect x="335" y="166" width="24" height="29" fill="black" transform="rotate(1 347 180.5)"/>
+    <rect x="372" y="172" width="31" height="26" fill="black" transform="rotate(-5 387.5 185)"/>
+    <rect x="411" y="178" width="28" height="33" fill="black" transform="rotate(2 425 194.5)"/>
+    <rect x="452" y="184" width="35" height="29" fill="black" transform="rotate(-2 469.5 198.5)"/>
+    <rect x="495" y="190" width="32" height="37" fill="black" transform="rotate(4 511 208.5)"/>
+    
+    <!-- Row 3 -->
+    <rect x="280" y="205" width="31" height="26" fill="black" transform="rotate(3 295.5 218)"/>
+    <rect x="320" y="212" width="28" height="33" fill="black" transform="rotate(-4 334 228.5)"/>
+    <rect x="362" y="219" width="35" height="30" fill="black" transform="rotate(1 379.5 234)"/>
+    <rect x="406" y="226" width="32" height="37" fill="black" transform="rotate(-3 422 244.5)"/>
+    <rect x="452" y="233" width="39" height="34" fill="black" transform="rotate(5 471.5 250)"/>
+    <rect x="500" y="240" width="36" height="41" fill="black" transform="rotate(-1 518 260.5)"/>
+    
+    <!-- Row 4 -->
+    <rect x="260" y="255" width="35" height="30" fill="black" transform="rotate(-5 277.5 270)"/>
+    <rect x="305" y="263" width="32" height="37" fill="black" transform="rotate(2 321 281.5)"/>
+    <rect x="352" y="271" width="39" height="34" fill="black" transform="rotate(-2 371.5 288)"/>
+    <rect x="401" y="279" width="36" height="41" fill="black" transform="rotate(4 419 299.5)"/>
+    <rect x="452" y="287" width="43" height="38" fill="black" transform="rotate(-4 473.5 306)"/>
+    <rect x="505" y="295" width="40" height="45" fill="black" transform="rotate(1 525 317.5)"/>
+    
+    <!-- Row 5 (bottom, largest) -->
+    <rect x="240" y="310" width="39" height="34" fill="black" transform="rotate(3 259.5 327)"/>
+    <rect x="290" y="319" width="36" height="41" fill="black" transform="rotate(-3 308 339.5)"/>
+    <rect x="342" y="328" width="43" height="38" fill="black" transform="rotate(5 363.5 347)"/>
+    <rect x="396" y="337" width="40" height="45" fill="black" transform="rotate(-5 416 359.5)"/>
+    <rect x="452" y="346" width="47" height="42" fill="black" transform="rotate(2 475.5 367)"/>
+    <rect x="510" y="355" width="44" height="49" fill="black" transform="rotate(-1 532 379.5)"/>
+    
+    <!-- Row 6 -->
+    <rect x="220" y="370" width="43" height="38" fill="black" transform="rotate(-4 241.5 389)"/>
+    <rect x="275" y="380" width="40" height="45" fill="black" transform="rotate(4 295 402.5)"/>
+    <rect x="332" y="390" width="47" height="42" fill="black" transform="rotate(-2 355.5 411)"/>
+    <rect x="391" y="400" width="44" height="49" fill="black" transform="rotate(3 413 424.5)"/>
+    <rect x="452" y="410" width="51" height="46" fill="black" transform="rotate(-5 477.5 433)"/>
+    <rect x="515" y="420" width="48" height="53" fill="black" transform="rotate(1 539 446.5)"/>
+  </g>
+</svg>

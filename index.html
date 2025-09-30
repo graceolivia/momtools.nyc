@@ -34,70 +34,71 @@
         min-height: 100vh;
       }
 
-      .blob {
+      .background-svg {
         position: absolute;
-        border-radius: 50% 40% 30% 70% / 60% 30% 70% 40%;
         z-index: 1;
         transition: all 0.3s ease;
       }
 
-      .blob:hover {
-        transform: scale(1.05) rotate(5deg);
+      .background-svg:hover {
+        transform: scale(1.05) rotate(3deg);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      .blob1 {
+      .bg-shape1 {
+        top: 8%;
+        left: 2%;
         width: 300px;
-        height: 250px;
-        background-color: var(--red);
-        top: 10%;
-        left: -5%;
+        height: 300px;
         animation: float 6s ease-in-out infinite;
       }
 
-      .blob2 {
-        width: 200px;
-        height: 280px;
-        background-color: var(--yellow);
-        top: 25%;
-        right: 5%;
+      .bg-shape2 {
+        top: 20%;
+        right: 2%;
+        width: 250px;
+        height: 250px;
         animation: float 8s ease-in-out infinite reverse;
       }
 
-      .blob3 {
-        width: 250px;
+      .bg-shape3 {
+        top: 55%;
+        left: 5%;
+        width: 200px;
         height: 200px;
-        background-color: var(--green);
-        top: 60%;
-        left: 10%;
         animation: float 7s ease-in-out infinite;
       }
 
-      .blob4 {
+      .bg-shape4 {
+        bottom: 10%;
+        right: 10%;
         width: 180px;
-        height: 220px;
-        background-color: var(--blue);
-        bottom: 5%;
-        right: 15%;
+        height: 180px;
         animation: float 5s ease-in-out infinite reverse;
       }
 
-      .blob5 {
-        width: 160px;
-        height: 180px;
-        background-color: var(--pink);
-        top: 50%;
-        right: -3%;
+      .bg-shape5 {
+        top: 45%;
+        right: -5%;
+        width: 220px;
+        height: 220px;
         animation: float 9s ease-in-out infinite;
       }
 
-      .blob6 {
-        width: 120px;
-        height: 150px;
-        background-color: var(--red);
-        top: 80%;
-        left: 60%;
+      .bg-shape6 {
+        top: 75%;
+        left: 55%;
+        width: 160px;
+        height: 160px;
         animation: float 4s ease-in-out infinite reverse;
+      }
+
+      .bg-shape7 {
+        top: 20%;
+        left: 20%;
+        width: 400px;
+        height: 300px;
+        animation: float 10s ease-in-out infinite;
       }
 
       @keyframes float {
@@ -106,11 +107,16 @@
       }
 
       .container {
-        max-width: 1200px;
+        max-width: 1000px;
         margin: 0 auto;
         padding: 2rem;
         position: relative;
         z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        justify-content: center;
       }
 
       .hero {
@@ -169,6 +175,8 @@
         padding: 3rem;
         margin: 2rem 0;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 800px;
       }
 
       .section {
@@ -244,12 +252,223 @@
     </style>
   </head>
   <body>
-    <div class="blob blob1"></div>
-    <div class="blob blob2"></div>
-    <div class="blob blob3"></div>
-    <div class="blob blob4"></div>
-    <div class="blob blob5"></div>
-    <div class="blob blob6"></div>
+    <!-- Background SVG shapes from assets folder -->
+    <svg class="background-svg bg-shape1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="matisse-style star">
+      <path d="M100 14
+               L114 64  163 42  124 82  186 92
+               L124 102 163 142 114 126 100 188
+               L90 126  42 163  82 116  14 92
+               L82 82   42 42   90 64  Z"
+            fill="#E53E3E" stroke="none"/>
+    </svg>
+
+    <svg class="background-svg bg-shape2" width="200" height="240" viewBox="0 0 200 240">
+      <path d="M30 40 C70 25, 120 30, 150 60 C170 90, 165 130, 150 170 C130 200, 100 220, 70 210 C40 200, 20 170, 15 140 C10 110, 15 80, 20 60 C25 50, 27 45, 30 40 Z" fill="#3182CE"/>
+    </svg>
+
+    <svg class="background-svg bg-shape3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="matisse-style cute apple cutout">
+      <defs>
+        <filter id="rough">
+          <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="5"/>
+          <feDisplacementMap in="SourceGraphic" scale="2.6"/>
+        </filter>
+      </defs>
+      <path filter="url(#rough)" fill="#FFC107" stroke="none"
+            d="M150 35
+               C160 28,173 28,182 35
+               C193 45,198 58,197 68
+               C210 60,220 64,222 75
+               C224 88,215 97,204 100
+               C216 100,224 110,221 122
+               C217 140,200 163,178 179
+               C153 196,120 206,94 203
+               C62 199,39 184,29 166
+               C17 145,16 120,25 98
+               C36 69,60 49,90 42
+               C109 38,127 39,150 35 Z"/>
+      <g fill="#101010" opacity="0.9">
+        <circle cx="110" cy="125" r="5"/>
+        <circle cx="140" cy="125" r="5"/>
+        <path d="M118 140
+                 C124 146,136 146,142 140"
+              fill="none" stroke="#101010" stroke-width="5" stroke-linecap="round"/>
+      </g>
+    </svg>
+
+    <svg class="background-svg bg-shape4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="rough cut square">
+      <path d="
+        M10 15
+        L47 8
+        L90 18
+        L83 47
+        L92 80
+        L55 90
+        L12 82
+        L20 50
+        Z"
+        fill="#ED64A6" stroke="none"/>
+    </svg>
+
+    <svg class="background-svg bg-shape5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-label="matisse-style rough spiral">
+      <path d="M280 250
+               L275 245
+               C265 238,252 237,242 242
+               L238 248
+               C235 255,237 263,243 268
+               L250 271
+               C258 273,267 272,274 267
+               L280 260
+               C285 252,284 242,277 234
+               L268 227
+               C257 222,244 223,234 230
+               L225 240
+               C218 252,220 266,230 276
+               L243 284
+               C258 290,275 288,287 277
+               L297 262
+               C305 245,302 225,287 210
+               L268 197
+               C245 185,218 188,198 208
+               L182 230
+               C170 255,175 285,198 307
+               L225 323
+               C255 337,290 332,315 307
+               L335 278
+               C350 243,343 203,313 173
+               L278 150
+               C237 130,190 138,158 173
+               L135 213
+               C115 258,125 310,163 347
+               L208 370
+               C258 392,315 382,352 342
+               L378 298"
+            fill="none"
+            stroke="#38A169"
+            stroke-width="28"
+            stroke-linecap="square"
+            stroke-linejoin="miter"/>
+    </svg>
+
+    <svg class="background-svg bg-shape6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" role="img" aria-label="matisse-style child cutout">
+      <path d="M150 45
+               C165 45,175 48,182 58
+               C188 65,190 73,189 80
+               C189 88,187 95,182 102
+               C176 108,168 112,158 114
+               C150 115,142 114,134 112
+               C126 108,120 102,116 95
+               C113 87,112 78,113 70
+               C114 60,118 52,125 48
+               C132 45,141 44,150 45
+               Z"
+            fill="#FFC107"/>
+      <rect x="140" y="105" width="20" height="15" fill="#FFC107"/>
+      <path d="M120 120
+               C118 122,117 125,117 130
+               C116 138,116 145,117 152
+               C117 160,117 168,118 175
+               C119 183,120 189,123 192
+               C128 195,135 196,142 195
+               L158 195
+               C165 196,172 195,177 192
+               C180 189,181 183,182 175
+               C183 168,183 160,183 152
+               C184 145,184 138,183 130
+               C183 125,182 122,180 120
+               C175 118,168 117,160 118
+               C152 119,145 119,140 118
+               C132 117,125 118,120 120
+               Z"
+            fill="#FFC107"/>
+      <path d="M118 120
+               C115 120,110 122,105 125
+               L80 155
+               C75 160,73 165,75 170
+               C77 175,82 175,87 172
+               L110 150
+               L118 140
+               Z"
+            fill="#FFC107"/>
+      <path d="M182 120
+               C185 120,190 122,195 125
+               L220 155
+               C225 160,227 165,225 170
+               C223 175,218 175,213 172
+               L190 150
+               L182 140
+               Z"
+            fill="#FFC107"/>
+      <path d="M125 185
+               C123 190,121 200,120 210
+               L118 240
+               L115 280
+               C115 290,117 295,123 295
+               C129 295,133 290,135 280
+               L138 240
+               L140 210
+               L140 185
+               Z"
+            fill="#FFC107"/>
+      <path d="M161 185
+               L161 210
+               L164 240
+               L166 280
+               C168 290,172 295,178 295
+               C184 295,186 290,186 280
+               L184 240
+               L181 210
+               C180 200,178 190,176 185
+               Z"
+            fill="#FFC107"/>
+      <path d="M145 155
+               C145 152,147 150,150 152
+               C153 150,155 152,155 155
+               C155 160,150 165,150 165
+               C150 165,145 160,145 155
+               Z"
+            fill="#d62626"/>
+    </svg>
+
+    <svg class="background-svg bg-shape7" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+      <g id="grid">
+        <rect x="320" y="120" width="23" height="18" fill="#4C51BF" transform="rotate(2 331.5 129)"/>
+        <rect x="350" y="125" width="19" height="24" fill="#4C51BF" transform="rotate(-3 359.5 137)"/>
+        <rect x="382" y="130" width="26" height="19" fill="#4C51BF" transform="rotate(4 395 139.5)"/>
+        <rect x="416" y="135" width="21" height="27" fill="#4C51BF" transform="rotate(-1 426.5 148.5)"/>
+        <rect x="452" y="140" width="29" height="23" fill="#4C51BF" transform="rotate(3 466.5 151.5)"/>
+        <rect x="300" y="160" width="27" height="22" fill="#4C51BF" transform="rotate(-4 313.5 171)"/>
+        <rect x="335" y="166" width="24" height="29" fill="#4C51BF" transform="rotate(1 347 180.5)"/>
+        <rect x="372" y="172" width="31" height="26" fill="#4C51BF" transform="rotate(-5 387.5 185)"/>
+        <rect x="411" y="178" width="28" height="33" fill="#4C51BF" transform="rotate(2 425 194.5)"/>
+        <rect x="452" y="184" width="35" height="29" fill="#4C51BF" transform="rotate(-2 469.5 198.5)"/>
+        <rect x="495" y="190" width="32" height="37" fill="#4C51BF" transform="rotate(4 511 208.5)"/>
+        <rect x="280" y="205" width="31" height="26" fill="#4C51BF" transform="rotate(3 295.5 218)"/>
+        <rect x="320" y="212" width="28" height="33" fill="#4C51BF" transform="rotate(-4 334 228.5)"/>
+        <rect x="362" y="219" width="35" height="30" fill="#4C51BF" transform="rotate(1 379.5 234)"/>
+        <rect x="406" y="226" width="32" height="37" fill="#4C51BF" transform="rotate(-3 422 244.5)"/>
+        <rect x="452" y="233" width="39" height="34" fill="#4C51BF" transform="rotate(5 471.5 250)"/>
+        <rect x="500" y="240" width="36" height="41" fill="#4C51BF" transform="rotate(-1 518 260.5)"/>
+        <rect x="260" y="255" width="35" height="30" fill="#4C51BF" transform="rotate(-5 277.5 270)"/>
+        <rect x="305" y="263" width="32" height="37" fill="#4C51BF" transform="rotate(2 321 281.5)"/>
+        <rect x="352" y="271" width="39" height="34" fill="#4C51BF" transform="rotate(-2 371.5 288)"/>
+        <rect x="401" y="279" width="36" height="41" fill="#4C51BF" transform="rotate(4 419 299.5)"/>
+        <rect x="452" y="287" width="43" height="38" fill="#4C51BF" transform="rotate(-4 473.5 306)"/>
+        <rect x="505" y="295" width="40" height="45" fill="#4C51BF" transform="rotate(1 525 317.5)"/>
+        <rect x="240" y="310" width="39" height="34" fill="#4C51BF" transform="rotate(3 259.5 327)"/>
+        <rect x="290" y="319" width="36" height="41" fill="#4C51BF" transform="rotate(-3 308 339.5)"/>
+        <rect x="342" y="328" width="43" height="38" fill="#4C51BF" transform="rotate(5 363.5 347)"/>
+        <rect x="396" y="337" width="40" height="45" fill="#4C51BF" transform="rotate(-5 416 359.5)"/>
+        <rect x="452" y="346" width="47" height="42" fill="#4C51BF" transform="rotate(2 475.5 367)"/>
+        <rect x="510" y="355" width="44" height="49" fill="#4C51BF" transform="rotate(-1 532 379.5)"/>
+        <rect x="220" y="370" width="43" height="38" fill="#4C51BF" transform="rotate(-4 241.5 389)"/>
+        <rect x="275" y="380" width="40" height="45" fill="#4C51BF" transform="rotate(4 295 402.5)"/>
+        <rect x="332" y="390" width="47" height="42" fill="#4C51BF" transform="rotate(-2 355.5 411)"/>
+        <rect x="391" y="400" width="44" height="49" fill="#4C51BF" transform="rotate(3 413 424.5)"/>
+        <rect x="452" y="410" width="51" height="46" fill="#4C51BF" transform="rotate(-5 477.5 433)"/>
+        <rect x="515" y="420" width="48" height="53" fill="#4C51BF" transform="rotate(1 539 446.5)"/>
+      </g>
+    </svg>
+
 
     <div class="container">
       <div class="hero">
