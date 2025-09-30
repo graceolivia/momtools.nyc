@@ -1,29 +1,311 @@
 <!-- index.html -->
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>momtools.nyc</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --cream: #FAF7F0;
+        --red: #E53E3E;
+        --yellow: #FFC107;
+        --green: #38A169;
+        --blue: #3182CE;
+        --pink: #ED64A6;
+        --black: #1A202C;
+        --white: #FFFFFF;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: var(--cream);
+        color: var(--black);
+        line-height: 1.6;
+        overflow-x: hidden;
+        position: relative;
+        min-height: 100vh;
+      }
+
+      .blob {
+        position: absolute;
+        border-radius: 50% 40% 30% 70% / 60% 30% 70% 40%;
+        z-index: 1;
+        transition: all 0.3s ease;
+      }
+
+      .blob:hover {
+        transform: scale(1.05) rotate(5deg);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .blob1 {
+        width: 300px;
+        height: 250px;
+        background-color: var(--red);
+        top: 10%;
+        left: -5%;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .blob2 {
+        width: 200px;
+        height: 280px;
+        background-color: var(--yellow);
+        top: 25%;
+        right: 5%;
+        animation: float 8s ease-in-out infinite reverse;
+      }
+
+      .blob3 {
+        width: 250px;
+        height: 200px;
+        background-color: var(--green);
+        top: 60%;
+        left: 10%;
+        animation: float 7s ease-in-out infinite;
+      }
+
+      .blob4 {
+        width: 180px;
+        height: 220px;
+        background-color: var(--blue);
+        bottom: 5%;
+        right: 15%;
+        animation: float 5s ease-in-out infinite reverse;
+      }
+
+      .blob5 {
+        width: 160px;
+        height: 180px;
+        background-color: var(--pink);
+        top: 50%;
+        right: -3%;
+        animation: float 9s ease-in-out infinite;
+      }
+
+      .blob6 {
+        width: 120px;
+        height: 150px;
+        background-color: var(--red);
+        top: 80%;
+        left: 60%;
+        animation: float 4s ease-in-out infinite reverse;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(2deg); }
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        position: relative;
+        z-index: 10;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 4rem 0 3rem;
+        position: relative;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+      }
+
+      .hero p {
+        font-size: clamp(1.125rem, 3vw, 1.5rem);
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        font-weight: 400;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background-color: var(--black);
+        color: var(--white);
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.125rem;
+        transition: all 0.3s ease;
+        margin: 0 0.5rem;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(26, 32, 44, 0.3);
+      }
+
+      .cta-button.outline {
+        background-color: transparent;
+        color: var(--black);
+        border: 2px solid var(--black);
+      }
+
+      .cta-button.outline:hover {
+        background-color: var(--black);
+        color: var(--white);
+      }
+
+      .content {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border-radius: 24px;
+        padding: 3rem;
+        margin: 2rem 0;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .section {
+        margin-bottom: 3rem;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--black);
+      }
+
+      .section h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 2rem 0 1rem;
+        color: var(--black);
+      }
+
+      .link-list {
+        list-style: none;
+        margin: 1rem 0;
+      }
+
+      .link-list li {
+        margin: 1rem 0;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .link-list li:hover {
+        transform: translateX(8px);
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .link-list a {
+        color: var(--blue);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .link-list a:hover {
+        color: var(--black);
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .blob {
+          opacity: 0.7;
+        }
+
+        .content {
+          padding: 2rem;
+          margin: 1rem 0;
+        }
+
+        .hero {
+          padding: 2rem 0;
+        }
+
+        .cta-button {
+          display: block;
+          margin: 0.5rem auto;
+          text-align: center;
+          max-width: 250px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>momtools</h1>
-    <p>there is a lot to think about when you're a mom in nyc. here are some links that might help</p>
-    <h3>my tools</h3>
-    <ul>
-        <li><a href="https://graceolivia.github.io/working-parent-calculator/">Working Parent Salary Calculator</a> - a calculator to figure out whether you will break even on childcare with a parent working vs staying home</li>
-    </ul>
-    <h3>exterior links</h3>
-    <h5>useful maps</h5>
-    <ul>
-        <li><a href="https://playgrounds.beta.nyc/">NYC Playground Map</a> - an interactive map of playgrounds in NYC with data on accessibility and restrooms</li>
-        <li><a href="https://www.google.com/maps/@40.784759,-74.8056003,9z/data=!4m2!11m1!2spFRJEpJePMFyw_gGDFlCkB_5NYzrrA?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D">Play In NYC map</a> - a Google map of playplaces for toddlers compiled by <a href="https://www.instagram.com/playinnyc">PlayInNYC Instagram</a></li>
-        <li><a href="https://www.mta.info/map/5346">Accessible MTA Stations</a> -a map of accessible MTA stops</li>
-        <li><a href="https://www.timeout.com/new-york-kids/things-to-do/25-best-playgrounds-in-new-york-city">Time Out's 25 Best Playgrounds In NYC</a> - a list of the best playgrounds in NYC with descriptions and accompanying <a href="https://www.google.com/maps/d/viewer?mid=17KJ_9QUNTa_rZn2xKRhtImfqJ3izqK9L&femb=1&ll=40.70611857243188%2C-73.95295774999997&z=11">Google Map</a> </li>
-    </ul>
-    <h5>Events</h5>
-    <ul>
-        <li><a href="https://activities.citycub.app/events">City Cub</a> - indie events aggregator that lets you find NYC events for different age kids</li>
-        <li><a href="https://www.nypl.org/events/calendar/online">NYPL Events</a> - search for free events for all ages through the NYPL website</li>
-    </ul>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="blob blob4"></div>
+    <div class="blob blob5"></div>
+    <div class="blob blob6"></div>
+
+    <div class="container">
+      <div class="hero">
+        <h1>momtools</h1>
+        <p>there is a lot to think about when you're a mom in nyc. here are some links that might help</p>
+        <a href="#tools" class="cta-button">Explore Tools</a>
+        <a href="#maps" class="cta-button outline">Find Maps</a>
+      </div>
+
+      <div class="content">
+        <div class="section" id="tools">
+          <h2>my tools</h2>
+          <ul class="link-list">
+            <li>
+              <a href="https://graceolivia.github.io/working-parent-calculator/">Working Parent Salary Calculator</a>
+              <span> - a calculator to figure out whether you will break even on childcare with a parent working vs staying home</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>exterior links</h2>
+
+          <h3 id="maps">useful maps</h3>
+          <ul class="link-list">
+            <li>
+              <a href="https://playgrounds.beta.nyc/">NYC Playground Map</a>
+              <span> - an interactive map of playgrounds in NYC with data on accessibility and restrooms</span>
+            </li>
+            <li>
+              <a href="https://www.google.com/maps/@40.784759,-74.8056003,9z/data=!4m2!11m1!2spFRJEpJePMFyw_gGDFlCkB_5NYzrrA?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D">Play In NYC map</a>
+              <span> - a Google map of playplaces for toddlers compiled by <a href="https://www.instagram.com/playinnyc">PlayInNYC Instagram</a></span>
+            </li>
+            <li>
+              <a href="https://www.mta.info/map/5346">Accessible MTA Stations</a>
+              <span> - a map of accessible MTA stops</span>
+            </li>
+            <li>
+              <a href="https://www.timeout.com/new-york-kids/things-to-do/25-best-playgrounds-in-new-york-city">Time Out's 25 Best Playgrounds In NYC</a>
+              <span> - a list of the best playgrounds in NYC with descriptions and accompanying <a href="https://www.google.com/maps/d/viewer?mid=17KJ_9QUNTa_rZn2xKRhtImfqJ3izqK9L&femb=1&ll=40.70611857243188%2C-73.95295774999997&z=11">Google Map</a></span>
+            </li>
+          </ul>
+
+          <h3>Events</h3>
+          <ul class="link-list">
+            <li>
+              <a href="https://activities.citycub.app/events">City Cub</a>
+              <span> - indie events aggregator that lets you find NYC events for different age kids</span>
+            </li>
+            <li>
+              <a href="https://www.nypl.org/events/calendar/online">NYPL Events</a>
+              <span> - search for free events for all ages through the NYPL website</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
