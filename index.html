@@ -367,6 +367,17 @@
         position: absolute;
         width: 280px;
         height: 350px;
+        z-index: 3;
+        transition: transform 1s ease-in-out, z-index 0s ease-in-out 1s;
+        transform-origin: left center;
+        left: 280px;
+        transform-style: preserve-3d;
+      }
+
+      .cover-front {
+        position: absolute;
+        width: 100%;
+        height: 100%;
         background: linear-gradient(135deg, #8B4513, #A0522D);
         border: 2px solid #654321;
         border-radius: 0 8px 8px 0;
@@ -375,11 +386,24 @@
         align-items: center;
         justify-content: center;
         color: var(--cream);
-        z-index: 3;
-        transition: transform 1s ease-in-out, z-index 0s ease-in-out 1s;
-        transform-origin: left center;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        left: 280px;
+        backface-visibility: hidden;
+      }
+
+      .cover-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #f8f4e6, #e8ddc7);
+        border: 2px solid #d4c4a8;
+        border-radius: 8px 0 0 8px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
       }
 
       .booklet-cover h4 {
@@ -411,10 +435,7 @@
       }
 
       .left-page {
-        left: 0;
-        border-radius: 8px 0 0 8px;
-        z-index: 1;
-        transition: opacity 0.3s ease-in-out 1s;
+        display: none;
       }
 
       .right-page {
@@ -427,8 +448,7 @@
       .page-content {
         text-align: center;
         padding: 1.5rem 0;
-        opacity: 0;
-        transition: opacity 0.4s ease-in-out 0.5s;
+        opacity: 1;
       }
 
       .page-content a {
@@ -461,9 +481,6 @@
         opacity: 1;
       }
 
-      .booklet.opened .page-content {
-        opacity: 1;
-      }
 
       @media (max-width: 768px) {
         .bg-shape1 {
@@ -842,20 +859,22 @@
             
             <div class="booklet">
               <div class="booklet-cover">
-                <h4>NYC Navigation Guide</h4>
-                <p>Click to explore →</p>
+                <div class="cover-front">
+                  <h4>NYC Navigation Guide</h4>
+                  <p>Click to explore →</p>
+                </div>
+                <div class="cover-back">
+                  <div class="page-content">
+                    <a href="https://playgrounds.beta.nyc/">NYC Playground Map</a>
+                    <small>Interactive map with accessibility data</small>
+                  </div>
+                  <div class="page-content">
+                    <a href="https://www.google.com/maps/@40.784759,-74.8056003,9z/data=!4m2!11m1!2spFRJEpJePMFyw_gGDFlCkB_5NYzrrA?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D">Play In NYC Map</a>
+                    <small>Toddler playplaces by @playinnyc</small>
+                  </div>
+                </div>
               </div>
               
-              <div class="booklet-page left-page">
-                <div class="page-content">
-                  <a href="https://playgrounds.beta.nyc/">NYC Playground Map</a>
-                  <small>Interactive map with accessibility data</small>
-                </div>
-                <div class="page-content">
-                  <a href="https://www.google.com/maps/@40.784759,-74.8056003,9z/data=!4m2!11m1!2spFRJEpJePMFyw_gGDFlCkB_5NYzrrA?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D">Play In NYC Map</a>
-                  <small>Toddler playplaces by @playinnyc</small>
-                </div>
-              </div>
               
               <div class="booklet-page right-page">
                 <div class="page-content">
