@@ -376,10 +376,10 @@
         justify-content: center;
         color: var(--cream);
         z-index: 3;
-        transition: transform 1s ease-in-out;
+        transition: transform 1s ease-in-out, z-index 0s ease-in-out 1s;
         transform-origin: left center;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        left: 140px;
+        left: 280px;
       }
 
       .booklet-cover h4 {
@@ -452,6 +452,7 @@
 
       .booklet.opened .booklet-cover {
         transform: rotateY(-180deg);
+        z-index: 0;
       }
 
       .booklet.opened .booklet-page {
