@@ -346,6 +346,115 @@
         text-decoration: underline;
       }
 
+      .booklet-container {
+        margin: 3rem 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .booklet {
+        perspective: 1000px;
+        width: 400px;
+        height: 250px;
+        margin: 2rem auto;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .booklet-cover {
+        position: absolute;
+        width: 200px;
+        height: 250px;
+        background: linear-gradient(135deg, #8B4513, #A0522D);
+        border: 2px solid #654321;
+        border-radius: 8px 0 0 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--cream);
+        z-index: 3;
+        transition: transform 1s ease-in-out;
+        transform-origin: right center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .booklet-cover h4 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .booklet-cover p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin: 0;
+      }
+
+      .booklet-page {
+        position: absolute;
+        width: 200px;
+        height: 250px;
+        background: linear-gradient(135deg, #f8f4e6, #e8ddc7);
+        border: 2px solid #d4c4a8;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out 0.5s;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .left-page {
+        left: 0;
+        border-radius: 8px 0 0 8px;
+        z-index: 1;
+      }
+
+      .right-page {
+        right: 0;
+        border-radius: 0 8px 8px 0;
+        z-index: 2;
+      }
+
+      .page-content {
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      .page-content a {
+        color: var(--blue);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .page-content a:hover {
+        color: var(--black);
+        text-decoration: underline;
+      }
+
+      .page-content small {
+        color: var(--black);
+        opacity: 0.7;
+        font-size: 0.8rem;
+        line-height: 1.3;
+      }
+
+      .booklet.opened .booklet-cover {
+        transform: rotateY(-180deg);
+      }
+
+      .booklet.opened .booklet-page {
+        opacity: 1;
+      }
+
       @media (max-width: 768px) {
         .bg-shape1 {
           width: 120px;
@@ -426,6 +535,26 @@
 
         .gallery-card h3 {
           font-size: 1.5rem;
+        }
+
+        .booklet {
+          width: 300px;
+          height: 200px;
+        }
+
+        .booklet-cover,
+        .booklet-page {
+          width: 150px;
+          height: 200px;
+          padding: 1rem;
+        }
+
+        .page-content a {
+          font-size: 0.9rem;
+        }
+
+        .page-content small {
+          font-size: 0.7rem;
         }
       }
     </style>
@@ -689,25 +818,39 @@
         <div class="section">
           <h2>exterior links</h2>
 
-          <h3 id="maps">useful maps</h3>
-          <ul class="link-list">
-            <li>
-              <a href="https://playgrounds.beta.nyc/">NYC Playground Map</a>
-              <span> - an interactive map of playgrounds in NYC with data on accessibility and restrooms</span>
-            </li>
-            <li>
-              <a href="https://www.google.com/maps/@40.784759,-74.8056003,9z/data=!4m2!11m1!2spFRJEpJePMFyw_gGDFlCkB_5NYzrrA?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D">Play In NYC map</a>
-              <span> - a Google map of playplaces for toddlers compiled by <a href="https://www.instagram.com/playinnyc">PlayInNYC Instagram</a></span>
-            </li>
-            <li>
-              <a href="https://www.mta.info/map/5346">Accessible MTA Stations</a>
-              <span> - a map of accessible MTA stops</span>
-            </li>
-            <li>
-              <a href="https://www.timeout.com/new-york-kids/things-to-do/25-best-playgrounds-in-new-york-city">Time Out's 25 Best Playgrounds In NYC</a>
-              <span> - a list of the best playgrounds in NYC with descriptions and accompanying <a href="https://www.google.com/maps/d/viewer?mid=17KJ_9QUNTa_rZn2xKRhtImfqJ3izqK9L&femb=1&ll=40.70611857243188%2C-73.95295774999997&z=11">Google Map</a></span>
-            </li>
-          </ul>
+          <div class="booklet-container" id="maps">
+            <h3 class="map-title">useful maps</h3>
+            <p class="map-subtitle">maps that will help you navigate nyc with your kids</p>
+            
+            <div class="booklet">
+              <div class="booklet-cover">
+                <h4>NYC Navigation Guide</h4>
+                <p>Click to explore →</p>
+              </div>
+              
+              <div class="booklet-page left-page">
+                <div class="page-content">
+                  <a href="https://playgrounds.beta.nyc/">NYC Playground Map</a>
+                  <small>Interactive map with accessibility data</small>
+                </div>
+                <div class="page-content">
+                  <a href="https://www.google.com/maps/@40.784759,-74.8056003,9z/data=!4m2!11m1!2spFRJEpJePMFyw_gGDFlCkB_5NYzrrA?entry=ttu&g_ep=EgoyMDI1MDgxMC4wIKXMDSoASAFQAw%3D%3D">Play In NYC Map</a>
+                  <small>Toddler playplaces by @playinnyc</small>
+                </div>
+              </div>
+              
+              <div class="booklet-page right-page">
+                <div class="page-content">
+                  <a href="https://www.mta.info/map/5346">Accessible MTA Stations</a>
+                  <small>Map of accessible subway stops</small>
+                </div>
+                <div class="page-content">
+                  <a href="https://www.timeout.com/new-york-kids/things-to-do/25-best-playgrounds-in-new-york-city">Time Out's Best Playgrounds</a>
+                  <small>25 best NYC playgrounds with <a href="https://www.google.com/maps/d/viewer?mid=17KJ_9QUNTa_rZn2xKRhtImfqJ3izqK9L&femb=1&ll=40.70611857243188%2C-73.95295774999997&z=11">map</a></small>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <h3>Events</h3>
           <ul class="link-list">
@@ -723,5 +866,42 @@
         </div>
       </div>
     </div>
+
+    <script>
+      // Intersection Observer for scroll trigger
+      const observerOptions = {
+        threshold: 0.3,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const booklet = entry.target.querySelector('.booklet');
+            if (booklet && !booklet.classList.contains('opened')) {
+              setTimeout(() => {
+                booklet.classList.add('opened');
+              }, 300);
+            }
+          }
+        });
+      }, observerOptions);
+
+      // Start observing when page loads
+      document.addEventListener('DOMContentLoaded', () => {
+        const bookletContainer = document.querySelector('.booklet-container');
+        if (bookletContainer) {
+          observer.observe(bookletContainer);
+        }
+
+        // Optional: Also allow click to toggle
+        const booklet = document.querySelector('.booklet');
+        if (booklet) {
+          booklet.addEventListener('click', () => {
+            booklet.classList.toggle('opened');
+          });
+        }
+      });
+    </script>
   </body>
 </html>
