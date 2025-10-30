@@ -86,8 +86,8 @@
       }
 
       .bg-shape6 {
-        top: 5%;
-        right: -5%;
+        top: -2%;
+        right: -7%;
         width: 640px;
         height: 640px;
         transform: rotate(-45deg);
@@ -95,8 +95,8 @@
       }
 
       .bg-shape7 {
-        top: 20%;
-        left: 20%;
+        top: 0%;
+        left: 10%;
         width: 400px;
         height: 300px;
         animation: float 10s ease-in-out infinite;
@@ -185,10 +185,22 @@
       }
 
       .section h2 {
-        font-size: 2rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: #4C51BF;
+        text-align: center;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+      }
+
+      .section .subtitle {
+        font-size: 1.1rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
         color: var(--black);
+        text-align: center;
+        opacity: 0.8;
+        font-style: italic;
       }
 
       .section h3 {
@@ -196,6 +208,111 @@
         font-weight: 600;
         margin: 2rem 0 1rem;
         color: var(--black);
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+        padding: 2rem;
+      }
+
+      .gallery-card {
+        background: #C53030;
+        border-radius: 0px;
+        padding: 2.5rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-decoration: none;
+        color: var(--white);
+        margin: 0 30px 30px 0;
+      }
+
+      .gallery-card::before {
+        content: '';
+        position: absolute;
+        top: -30px;
+        left: 0;
+        right: 0;
+        height: 30px;
+        background: inherit;
+        filter: brightness(1.3);
+        transform: skewX(-45deg);
+        transform-origin: bottom left;
+        border-radius: 0;
+      }
+
+      .gallery-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -30px;
+        bottom: 0;
+        width: 30px;
+        background: inherit;
+        filter: brightness(0.7);
+        transform: skewY(-45deg);
+        transform-origin: bottom left;
+        border-radius: 0;
+      }
+
+      .gallery-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .gallery-card:nth-child(1) {
+        background: #C53030;
+      }
+
+      .gallery-card:nth-child(2) {
+        background: #3182CE;
+      }
+
+      .gallery-card:nth-child(3) {
+        background: #D69E2E;
+      }
+
+      .gallery-card:nth-child(4) {
+        background: #38A169;
+      }
+
+      .gallery-card h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0 0 1rem 0;
+        line-height: 1.2;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+
+      .gallery-card h4 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin: -0.5rem auto 1rem auto;
+        background: var(--yellow);
+        color: var(--black);
+        padding: 0.3rem 0.7rem;
+        border-radius: 12px;
+        display: inline-block;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+
+      .gallery-card p {
+        font-size: 1rem;
+        opacity: 0.9;
+        line-height: 1.5;
+        margin: 0;
+        position: relative;
+        z-index: 2;
+        text-align: center;
       }
 
       .link-list {
@@ -280,6 +397,35 @@
           margin: 0.5rem auto;
           text-align: center;
           max-width: 250px;
+        }
+
+        .gallery {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .gallery-card {
+          padding: 2rem;
+          min-height: 160px;
+          margin: 0 20px 20px 0;
+        }
+
+        .gallery-card::before {
+          height: 20px;
+          top: -20px;
+        }
+
+        .gallery-card::after {
+          width: 20px;
+          right: -20px;
+        }
+
+        .gallery-card:hover {
+          transform: translateY(-4px);
+        }
+
+        .gallery-card h3 {
+          font-size: 1.5rem;
         }
       }
     </style>
@@ -514,22 +660,29 @@
       <div class="content">
         <div class="section" id="tools">
           <h2>my tools</h2>
-          <ul class="link-list">
-            <li>
-              <a href="https://graceolivia.github.io/working-parent-calculator/">Working Parent Salary Calculator</a>
-              <span> - a calculator to figure out whether you will break even on childcare with a parent working vs staying home</span>
-            </li>
+          <p class="subtitle">useful things I've made for my life as a nyc mom</p>
+          <div class="gallery">
+            <a href="https://graceolivia.github.io/working-parent-calculator/" class="gallery-card">
+              <h3>Working Parent Salary Calculator</h3>
+              <p>A calculator to figure out whether you will break even on childcare with a parent working vs staying home</p>
+            </a>
 
-            <li>
-              <a href="https://graceolivia.github.io/playground-explorer/">Playground Explorer</a>
-              <span> - a map of playgrounds in NYC aggregated from open NYC data</span>
-            </li>
+            <a href="https://graceolivia.github.io/playground-explorer/" class="gallery-card">
+              <h3>Playground Explorer</h3>
+              <p>A map of playgrounds in NYC aggregated from open NYC data</p>
+            </a>
 
-            <li>
-              <a href="https://graceolivia.github.io/babysleep2025/">Baby Sleep Tool</a>
-              <span> - a helpful tool for tracking baby sleep patterns</span>
-            </li>
-          </ul>
+            <a href="https://graceolivia.github.io/babysleep2025/" class="gallery-card">
+              <h3>Baby Sleep Tool</h3>
+              <p>A helpful tool for tracking baby sleep patterns</p>
+            </a>
+
+            <a href="https://graceolivia.github.io/strollerTransitNYC/" class="gallery-card">
+              <h3>Stroller Transit NYC</h3>
+              <h4>🚧 under construction 🚧</h4>
+              <p>NYC subway accessibility tool for parents with strollers</p>
+            </a>
+          </div>
           
         </div>
 
