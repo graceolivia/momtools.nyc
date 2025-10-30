@@ -198,6 +198,64 @@
         color: var(--black);
       }
 
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .gallery-card {
+        background: #C53030;
+        border-radius: 24px;
+        padding: 2.5rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-decoration: none;
+        color: var(--white);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .gallery-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+      }
+
+      .gallery-card:nth-child(1) {
+        background: #C53030;
+      }
+
+      .gallery-card:nth-child(2) {
+        background: #3182CE;
+      }
+
+      .gallery-card:nth-child(3) {
+        background: #D69E2E;
+      }
+
+      .gallery-card h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0 0 1rem 0;
+        line-height: 1.2;
+        position: relative;
+        z-index: 2;
+      }
+
+      .gallery-card p {
+        font-size: 1rem;
+        opacity: 0.9;
+        line-height: 1.5;
+        margin: 0;
+        position: relative;
+        z-index: 2;
+      }
+
       .link-list {
         list-style: none;
         margin: 1rem 0;
@@ -280,6 +338,20 @@
           margin: 0.5rem auto;
           text-align: center;
           max-width: 250px;
+        }
+
+        .gallery {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .gallery-card {
+          padding: 2rem;
+          min-height: 160px;
+        }
+
+        .gallery-card h3 {
+          font-size: 1.5rem;
         }
       }
     </style>
@@ -514,22 +586,22 @@
       <div class="content">
         <div class="section" id="tools">
           <h2>my tools</h2>
-          <ul class="link-list">
-            <li>
-              <a href="https://graceolivia.github.io/working-parent-calculator/">Working Parent Salary Calculator</a>
-              <span> - a calculator to figure out whether you will break even on childcare with a parent working vs staying home</span>
-            </li>
+          <div class="gallery">
+            <a href="https://graceolivia.github.io/working-parent-calculator/" class="gallery-card">
+              <h3>Working Parent Salary Calculator</h3>
+              <p>A calculator to figure out whether you will break even on childcare with a parent working vs staying home</p>
+            </a>
 
-            <li>
-              <a href="https://graceolivia.github.io/playground-explorer/">Playground Explorer</a>
-              <span> - a map of playgrounds in NYC aggregated from open NYC data</span>
-            </li>
+            <a href="https://graceolivia.github.io/playground-explorer/" class="gallery-card">
+              <h3>Playground Explorer</h3>
+              <p>A map of playgrounds in NYC aggregated from open NYC data</p>
+            </a>
 
-            <li>
-              <a href="https://graceolivia.github.io/babysleep2025/">Baby Sleep Tool</a>
-              <span> - a helpful tool for tracking baby sleep patterns</span>
-            </li>
-          </ul>
+            <a href="https://graceolivia.github.io/babysleep2025/" class="gallery-card">
+              <h3>Baby Sleep Tool</h3>
+              <p>A helpful tool for tracking baby sleep patterns</p>
+            </a>
+          </div>
           
         </div>
 
