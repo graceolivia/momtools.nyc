@@ -406,7 +406,7 @@
         flex-direction: column;
         justify-content: space-around;
         opacity: 0;
-        transition: opacity 0.8s ease-in-out 1s;
+        transition: opacity 0.3s ease-in-out 0.2s;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       }
 
@@ -414,19 +414,21 @@
         left: 0;
         border-radius: 8px 0 0 8px;
         z-index: 1;
+        transition: opacity 0.3s ease-in-out 1s;
       }
 
       .right-page {
         right: 0;
         border-radius: 0 8px 8px 0;
         z-index: 2;
+        transition: opacity 0.3s ease-in-out 0s;
       }
 
       .page-content {
         text-align: center;
         padding: 1.5rem 0;
         opacity: 0;
-        transition: opacity 0.6s ease-in-out 1.5s;
+        transition: opacity 0.4s ease-in-out 0.5s;
       }
 
       .page-content a {
