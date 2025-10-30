@@ -356,8 +356,8 @@
 
       .booklet {
         perspective: 1000px;
-        width: 400px;
-        height: 250px;
+        width: 560px;
+        height: 350px;
         margin: 2rem auto;
         position: relative;
         cursor: pointer;
@@ -365,11 +365,11 @@
 
       .booklet-cover {
         position: absolute;
-        width: 200px;
-        height: 250px;
+        width: 280px;
+        height: 350px;
         background: linear-gradient(135deg, #8B4513, #A0522D);
         border: 2px solid #654321;
-        border-radius: 8px 0 0 8px;
+        border-radius: 0 8px 8px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -377,35 +377,36 @@
         color: var(--cream);
         z-index: 3;
         transition: transform 1s ease-in-out;
-        transform-origin: right center;
+        transform-origin: left center;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        left: 140px;
       }
 
       .booklet-cover h4 {
-        font-size: 1.2rem;
+        font-size: 1.7rem;
         font-weight: 700;
         margin-bottom: 1rem;
         text-align: center;
       }
 
       .booklet-cover p {
-        font-size: 0.9rem;
+        font-size: 1.3rem;
         opacity: 0.8;
         margin: 0;
       }
 
       .booklet-page {
         position: absolute;
-        width: 200px;
-        height: 250px;
+        width: 280px;
+        height: 350px;
         background: linear-gradient(135deg, #f8f4e6, #e8ddc7);
         border: 2px solid #d4c4a8;
-        padding: 1.5rem;
+        padding: 2rem;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         opacity: 0;
-        transition: opacity 0.8s ease-in-out 0.5s;
+        transition: opacity 0.8s ease-in-out 1s;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       }
 
@@ -423,7 +424,9 @@
 
       .page-content {
         text-align: center;
-        padding: 1rem 0;
+        padding: 1.5rem 0;
+        opacity: 0;
+        transition: opacity 0.6s ease-in-out 1.5s;
       }
 
       .page-content a {
@@ -444,7 +447,7 @@
         color: var(--black);
         opacity: 0.7;
         font-size: 0.8rem;
-        line-height: 1.3;
+        line-height: 1.2;
       }
 
       .booklet.opened .booklet-cover {
@@ -452,6 +455,10 @@
       }
 
       .booklet.opened .booklet-page {
+        opacity: 1;
+      }
+
+      .booklet.opened .page-content {
         opacity: 1;
       }
 
@@ -538,15 +545,23 @@
         }
 
         .booklet {
-          width: 300px;
-          height: 200px;
+          width: 420px;
+          height: 280px;
         }
 
         .booklet-cover,
         .booklet-page {
-          width: 150px;
-          height: 200px;
-          padding: 1rem;
+          width: 210px;
+          height: 280px;
+          padding: 1.5rem;
+        }
+
+        .booklet-cover h4 {
+          font-size: 1.3rem;
+        }
+
+        .booklet-cover p {
+          font-size: 1rem;
         }
 
         .page-content a {
